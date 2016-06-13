@@ -1,0 +1,291 @@
+
+
+// color variables
+$grey: #414042;
+$blue: #0E426A;
+$blue-dark: #214099;
+$teal: #27AAE1;
+$green: #66BD5A;
+$lime: #A2CE4D;
+$yellow: #FFF200;
+
+
+@import "reset";
+
+@import "fonts";
+
+@import "mixins";
+
+@import "base";
+
+@import "grid";
+
+
+
+// background-container
+.container {
+	background: white;
+	padding-bottom: 40px;
+
+	@include respond-to( 1220px ) {
+		padding-bottom: 20px;
+	}
+}
+
+
+// header styles
+header {
+	position: relative;
+	background: $blue url(../img/bg-header.jpg) bottom center;
+	background-size: cover;
+	text-align: center;
+	border-top: 40px solid $lime;
+
+	img {
+		display: block;
+		margin-top: -22px;
+	}
+
+	@include respond-to( 768px ) {
+		border-top: 80px solid $lime;
+
+		img { margin-top: -42px; }
+	}
+}
+
+
+// wrap div
+.wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	@include clearfix;
+}
+
+
+
+// main content container
+.main {
+	background: url(../img/bg-body.png) bottom center no-repeat;
+	background-size: cover;
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 40px;
+	}
+
+	.wrap {
+		background: url(../img/bg-body-inner.jpg) center center no-repeat;
+		background-size: cover;
+	}
+
+	.buttons {
+		text-align: center;
+		padding: 20px;
+	}
+}
+
+
+
+// intro styles
+.intro {
+	.thermometer {
+		margin: 0 auto;
+	}
+
+	@include respond-to( 500px ) {
+		.thermometer {
+			float: right;
+			margin: 0 0 0 20px;
+		}
+	}
+	
+	@include font-title-light;
+	font-size: 1.6em;
+	line-height: 1.7em;
+	color: black;
+}
+
+
+
+// colors
+.bg-blue { background: $blue; }
+.bg-blue-dark { background: $blue-dark; }
+.bg-teal { background: $teal; }
+.bg-green { background: $green; }
+.bg-lime { background: $lime; }
+
+
+
+// tool styles
+.tool {	
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 20px 40px;
+	}
+
+	.calculator, .box {
+		padding: 10px 15px 10px;
+		color: white;
+		@include font-title;
+
+		button, input[type=submit], .btn {
+			width: 100%;
+			margin: 0 auto;
+		}
+		
+		@include respond-to( 768px ) { 
+			margin-top: 30px;
+			border-radius: 20px;
+			font-size: 1.2em;
+
+			img {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+
+
+// results styles
+.results {
+	display: none;
+	text-align: center;
+	padding: 20px;
+	
+	@include respond-to( 768px ) {
+		padding: 20px 10%;
+	}
+	
+	@include respond-to( 1024px ) {
+		padding: 20px 25%;
+	}
+
+	// large title
+	h2 {
+		@include font;
+		font-size: 1.8em;
+
+		@include respond-to( 768px ) {
+			font-size: 3em;
+			padding: 10px 20px;
+		}
+	}
+
+	p {
+		font-size: 1.6em;
+		line-height: 1.4em;
+
+		@include respond-to( 768px ) {
+			font-size: 2.2em;
+		}
+	}
+
+	.result-minor {
+		display: none;
+	}
+}
+
+
+
+// button styles
+input[type=submit], button, .btn {
+	@include font-title;
+	padding: 15px;
+	background: $lime;
+	color: $blue-dark;
+	border: 0;
+	border-radius: 10px;
+	font-size: 2em;
+	line-height: 1.4em;
+	text-transform: uppercase;
+	display: block;
+	width: 90%;
+	cursor: pointer;
+	text-align: center;
+	position: relative;
+	margin: 10px auto;
+
+	span {
+		display: block;
+	}
+	
+	&:after {
+		content: "";
+		position: absolute;
+		right: 5px;
+		top: 50%;
+		width: 30px;
+		height: 30px;
+		margin-top: -15px;
+	}
+
+	&:hover {
+		opacity: .9;
+	}
+
+	&.go-back {
+		background: lighten( $grey, 20% );
+		font-size: 1.5em;
+		color: white;
+	}
+
+	@include respond-to( 768px ) {
+		max-width: 50%;
+		margin: 30px auto;
+	}
+}
+
+
+
+// footer styles
+.footer-bar {
+	padding: 20px;
+	text-align: center;
+
+	&, a {
+		color: $grey;
+	}
+
+	h2 {
+		@include font;
+	}
+
+	h2 {
+		font-size: 2.4em;
+		line-height: 100px;
+		text-transform: uppercase;
+	}
+
+	h4 {
+		font-size: 17px;
+		@include respond-to( 800px ) { font-size: 26px; }
+	}
+
+	.sixty, .fourty {
+		text-align: center;
+	}
+
+	.separator {
+		border-right: 1px solid $blue;
+	}
+
+}
+
+
+
+.fine-print {
+	background: white;
+	padding: 0 20px;
+	font-size: .8em;
+	line-height: 1.3em;
+	text-align: left;
+
+	img {
+		float: right;
+		margin: 0 0 15px 15px;
+	}
+}
+
