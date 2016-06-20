@@ -272,6 +272,12 @@ input[type=submit], button, .btn {
 		border-right: 1px solid $blue;
 	}
 
+	.phone {
+		@include respond-to( 768px ) {
+			padding: 55px 0 0;
+		}
+	}
+
 }
 
 
