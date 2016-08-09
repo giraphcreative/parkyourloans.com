@@ -55,20 +55,15 @@
 					</div>
 					
 					<div class="loan-personal calculator bg-teal">
-						<div class="fourty">
+						<div class="fourty" style="padding-bottom: 10px;">
 							<img src="img/rate-personal.png">
 						</div>
-						<div class="thirty">
-							<p><label for="amount">your current balance</label><input type="text" placeholder="7,500" class="amount" /></p>
-							<p><label for="rate">your current rate</label><input type="text" placeholder="10.5" class="rate percent" /></p>
-							<input type="hidden" class="rate_compare" value="13.2" />
-						</div>
-						<div class="thirty">
-							<p><label for="term">your current term</label>
-								<select class="term">
-									<option value="18m">18 mo.</option>
-								</select>
-							</p>
+						<div class="half">
+							<p><label for="amount">desired amount</label><input type="text" placeholder="7,500" class="amount" /></p>
+							<input type="hidden" class="rate" value="13.2" />
+							<input type="hidden" class="term" value="18m" />
+							<input type="hidden" class="rate_compare" value="8" />
+							<p class="quiet">Calculation based on a term of 18 months and is compared against a credit card rate of 13.2%.</p>
 						</div>
 						<div class="group"></div>
 					</div>

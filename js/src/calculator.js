@@ -28,6 +28,7 @@ $(function(){
 		response_compare:"%savings%",
 		error_text:"0",
 		callback: function( elem, data ){
+			console.log( data );
 			if ( data!==0 ) {
 				recalculate_total();
 			}
