@@ -88,22 +88,12 @@ header {
 
 
 // intro styles
-.intro {
-	.thermometer {
-		margin: 0 auto;
-	}
-
-	@include respond-to( 500px ) {
-		.thermometer {
-			float: right;
-			margin: 0 0 0 20px;
-		}
-	}
-	
+.intro {	
 	@include font-title-light;
 	font-size: 1.6em;
 	line-height: 1.7em;
 	color: black;
+	text-align: center;
 }
 
 
@@ -143,6 +133,12 @@ header {
 			img {
 				margin-top: 20px;
 			}
+		}
+
+		.quiet {
+			font-size: .8em;
+			opacity: .6;
+			text-align: center;
 		}
 	}
 }
