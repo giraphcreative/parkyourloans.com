@@ -2,39 +2,6 @@
 
 $(function(){
 	
-	var recalculate_total = function(){
-			var total = parseFloat( typeof( $(".result.loan-auto").html() )!=="undefined" ? $(".result.loan-auto").html().replace("$","").replace(",","") : 0 )+
-				parseFloat( typeof( $(".result.loan-personal").html() )!=="undefined" ? $(".result.loan-personal").html().replace("$","").replace(",","") : 0 );
-			if ( total>0 ) {
-				$(".result.total").html(""+total.toFixed(2));
-			}
-		};
-
-	$(".calculator.loan-auto").accrue({
-		mode: "compare",
-		response_output_div: ".result.loan-auto",
-		response_compare:"%savings%",
-		error_text:"0",
-		callback: function( elem, data ){
-			if ( data!==0 ) {
-				recalculate_total();
-			}
-		}
-	});
-
-	$(".calculator.loan-personal").accrue({
-		mode: "compare",
-		response_output_div: ".result.loan-personal",
-		response_compare:"%savings%",
-		error_text:"0",
-		callback: function( elem, data ){
-			console.log( data );
-			if ( data!==0 ) {
-				recalculate_total();
-			}
-		}
-	});
-
 	$(".numbers-only").keyup(function(){
 		var fixed=$(this).val().replace(/[^0-9.]/g,"");
 		$(this).val( fixed );
@@ -46,6 +13,40 @@ $(function(){
 		$('html,body').animate({
 			scrollTop: $( "header img" ).height()
         }, 800);
+
+		var loan_info = $.loanInfo({
+			amount: $(".calculator .amount").val(),
+			rate: $(".calculator .rate").val(),
+			term: $(".calculator .term").val()
+		});
+
+		var loan_info_compare = $.loanInfo({
+			amount: $(".calculator .amount").val(),
+			rate: $(".calculator .rate_compare").val(),
+			term: $(".calculator .term").val()
+		});
+
+		var interest_savings = loan_info.total_interest - loan_info_compare.total_interest;
+		interest_savings = ( Math.ceil( interest_savings * 100 ) / 100 );
+
+		var one_percent = loan_info_compare.original_amount * .01;
+
+		var three_months = Math.ceil( ( loan_info_compare.payment_amount * 300 ) ) / 100;
+
+		var total_savings = interest_savings + one_percent + three_months;
+
+		// log the calculation data for test purposes
+		console.log( loan_info );
+		console.log( loan_info_compare );
+		console.log( interest_savings );
+		console.log( one_percent );
+		console.log( three_months );
+		console.log( total_savings );
+
+		$(".results .interest-savings").html( interest_savings );
+		$(".results .cash-back").html( one_percent );
+		$(".results .no-payments").html( three_months );
+		$(".results .total-savings").html( total_savings );
 	});
 
 	$(".go-back").click(function(){

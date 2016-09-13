@@ -28,8 +28,10 @@
 						<p>Credit unions were formed to save members money on loans.<br>
 						See how you can put that principle to work for you! As a bonus, for each loan financed, you’ll be entered to win $1,936 to honor 80 years of helping our community save more.* Go on. Put us to the test. </p>
 					</div>
+					<p class="buttons"><a href="#savings" class="btn">See Your Savings</a> &nbsp; <a href="#refer" class="btn">Refer a Member</a></p>
 
 					<div class="loan-auto calculator bg-lime">
+						<a name="savings"></a>
 						<div class="fourty">
 							<img src="img/rate-auto.png">
 						</div>
@@ -50,10 +52,12 @@
 									<option value="84m">84 mo.</option>
 								</select>
 							</p>
+							<a href="#" class="calculate btn">Save Me More</a>
 						</div>
 						<div class="group"></div>
 					</div>
 					
+					<!--
 					<div class="loan-personal calculator bg-teal">
 						<div class="fourty" style="padding-bottom: 10px;">
 							<img src="img/rate-personal.png">
@@ -67,13 +71,12 @@
 						</div>
 						<div class="group"></div>
 					</div>
+					-->
 
 					<a href="https://www.mortgagecenter.com/apply-online" target="_blank"><img src="img/home-equity.png" style="margin-top: 30px;"></a>
 
-					<div class="buttons">
-						<a href="#" class="calculate"><img src="img/button-save.png"></a>
-					</div>
 
+					<a name="refer"></a>
 					<div class="intro group">
 						<p>Refer a friend or family member to the credit union - if they open a new account, you'll <strong><em>both</em></strong> be entered to win $1,936!*</p>
 					</div>
@@ -103,13 +106,14 @@
 				<div class="results">
 
 					<h2>Congratulations!</h2>				
-					<p class="larger">We may be able to save you up to <strong>$<span class="result total"></span></strong> in interest!</p>
-					<p class="result-minor">Save up to <strong>$<span class="result loan-auto"></span></strong> on your <strong>Auto Loan</strong>.</p>
-					<p class="result-minor">Save up to <strong>$<span class="result loan-personal"></span></strong> on your <strong>Personal Loan</strong>.</p>
-					<p class="larger">Plus, be automatically entered to win <strong>$1,936*</strong> for each loan financed!</p>
+					<p>Save up to <strong>$<span class="interest-savings"></span></strong> in interest!<br>
+						Get 1% cash back of <strong>$<span class="cash-back"></span></strong>.<br>
+						No payments for 3 months (<strong>$<span class="no-payments"></span></strong>).</p>
+					<p class="larger">Total possible savings: <strong>$<span class="total-savings"></span></strong></p>
+					<p class="pad-top">Plus, be automatically entered to win <strong>$1,936*</strong> for each loan financed!</p>
 					<div class="buttons">
-						<a href="https://www.24x7loans.com/lpccuauto/" class="apply" onClick="_gaq.push(['_trackEvent', 'Apply', 'Click', 'Clicked Apply Button']);"><img src="img/button-apply.png"></a><br>
-						<a class="go-back"><img src="img/button-go-back.png"></a>
+						<a class="go-back">&lt; Go Back</a> &nbsp; <a href="https://www.24x7loans.com/lpccuauto/" class="apply btn" onClick="_gaq.push(['_trackEvent', 'Apply', 'Click', 'Clicked Apply Button']);">Apply Now &gt;</a>
+						
 					</div>
 
 				</div>

@@ -120,9 +120,12 @@ header {
 		color: white;
 		@include font-title;
 
-		button, input[type=submit], .btn {
+		button, input[type=submit], .btn, .calculate {
+			background: $blue-dark;
+			color: white;
+			display: block;
 			width: 100%;
-			margin: 0 auto;
+			max-width: 100%;
 		}
 		
 		@include respond-to( 768px ) { 
@@ -141,6 +144,7 @@ header {
 			text-align: center;
 		}
 	}
+
 }
 
 
@@ -171,17 +175,26 @@ header {
 	}
 
 	p {
-		font-size: 1.6em;
+		font-size: 1.2em;
 		line-height: 1.4em;
 
 		@include respond-to( 768px ) {
-			font-size: 2.2em;
+			font-size: 1.4em;
+		}
+
+		&.larger {
+			font-size: 1.6em;
+
+			@include respond-to( 768px ) {
+				font-size: 1.8em;
+			}
+		}
+
+		&.pad-top {
+			padding-top: 30px;
 		}
 	}
 
-	.result-minor {
-		display: none;
-	}
 }
 
 
@@ -194,38 +207,16 @@ input[type=submit], button, .btn {
 	color: $blue-dark;
 	border: 0;
 	border-radius: 10px;
-	font-size: 2em;
-	line-height: 1.4em;
+	font-size: 1.4em;
+	line-height: 1.6em;
+	margin: 0 5px;
 	text-transform: uppercase;
-	display: block;
-	width: 90%;
+	display: inline-block;
 	cursor: pointer;
 	text-align: center;
-	position: relative;
-	margin: 10px auto;
-
-	span {
-		display: block;
-	}
 	
-	&:after {
-		content: "";
-		position: absolute;
-		right: 5px;
-		top: 50%;
-		width: 30px;
-		height: 30px;
-		margin-top: -15px;
-	}
-
 	&:hover {
 		opacity: .9;
-	}
-
-	&.go-back {
-		background: lighten( $grey, 20% );
-		font-size: 1.5em;
-		color: white;
 	}
 
 	@include respond-to( 768px ) {
