@@ -29,18 +29,18 @@
 						See how you can put that principle to work for you! As a bonus, for each loan financed, you’ll be entered to win $1,936 to honor 80 years of helping our community save more.* Go on. Put us to the test. </p>
 					</div>
 					<p class="buttons"><a href="#savings" class="btn">See Your Savings</a> &nbsp; <a href="#refer" class="btn">Refer a Member</a></p>
-
+					
+					<p class="error" style="display: none;">Please enter a loan amount.</p>
 					<div class="loan-auto calculator bg-lime">
 						<a name="savings"></a>
 						<div class="fourty">
 							<img src="img/rate-auto.png">
 						</div>
 						<div class="thirty">
-							<p><label for="amount">your current balance</label><input type="text" placeholder="7,500" class="amount" /></p>
-							<p><label for="rate">your current rate</label><input type="text" placeholder="8.99" class="rate percent" /></p>
+							<p><label><input name="type" type="radio" class="type" value="refinance" checked="checked" /> Refinance</label> <label><input name="type" type="radio" class="type" value="purchase" /> Purchase</label></p>
+							<p><label for="amount">loan amount</label><input type="text" placeholder="7,500" class="amount" /></p>
+							<p class="rate-field"><label for="rate">your current rate</label><input type="text" placeholder="8.99" class="rate percent" /></p>
 							<input type="hidden" class="rate_compare" value="2.29" />
-						</div>
-						<div class="thirty">
 							<p><label for="term">your current term</label>
 								<select class="term">
 									<option value="12m">12 mo.</option>
@@ -52,7 +52,9 @@
 									<option value="84m">84 mo.</option>
 								</select>
 							</p>
-							<a href="#" class="calculate btn">Save Me More</a>
+						</div>
+						<div class="thirty">
+							<a class="calculate btn">Calculate Potential Holiday Savings</a>
 						</div>
 						<div class="group"></div>
 					</div>
@@ -106,7 +108,7 @@
 				<div class="results">
 
 					<h2>Congratulations!</h2>				
-					<p>Save up to <strong>$<span class="interest-savings"></span></strong> in interest!<br>
+					<p><span class="interest-savings-text">Save up to <strong>$<span class="interest-savings"></span></strong> in interest!<br></span>
 						Get 1% cash back of <strong>$<span class="cash-back"></span></strong>.<br>
 						No payments for 3 months (<strong>$<span class="no-payments"></span></strong>).</p>
 					<p class="larger">Total possible savings: <strong>$<span class="total-savings"></span></strong></p>

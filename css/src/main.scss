@@ -107,6 +107,15 @@ header {
 
 
 
+// error styles
+.error {
+	color: red;
+	font-size: 1.4em;
+	text-align: center;
+}
+
+
+
 // tool styles
 .tool {	
 	padding: 20px;
@@ -126,6 +135,8 @@ header {
 			display: block;
 			width: 100%;
 			max-width: 100%;
+			font-size: 1.1em;
+			margin: 10px 0;
 		}
 		
 		@include respond-to( 768px ) { 
